@@ -9,8 +9,8 @@ import io.github.gronnmann.coinflipper.gui.configurationeditor.FileEditSelector;
 
 public class CommandConfigEditor extends CommandModule{
 
-	public CommandConfigEditor(String label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+	public CommandConfigEditor() {
+		super(Message.CMD_CONFIG.getMessage(), "config", 0, -1, true);
 	}
 
 	@Override

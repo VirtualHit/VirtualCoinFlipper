@@ -3,8 +3,8 @@ package io.github.gronnmann.coinflipper.hook;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-import com.SirBlobman.combatlogx.api.ICombatLogX;
-import com.SirBlobman.combatlogx.api.utility.ICombatManager;
+import com.github.sirblobman.combatlogx.api.ICombatLogX;
+import com.github.sirblobman.combatlogx.api.manager.ICombatManager;
 
 public final class HookCombatLogX10 {
 	private HookCombatLogX10() {}

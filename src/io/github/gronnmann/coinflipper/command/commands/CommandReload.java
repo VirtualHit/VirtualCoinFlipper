@@ -8,8 +8,8 @@ import io.github.gronnmann.coinflipper.customizable.Message;
 
 public class CommandReload extends CommandModule{
 
-	public CommandReload(String label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+	public CommandReload() {
+		super(Message.CMD_RELOAD.getMessage(), "reload", 0, -1, false);
 	}
 
 	@Override

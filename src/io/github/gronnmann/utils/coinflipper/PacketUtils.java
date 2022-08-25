@@ -7,6 +7,10 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
+
 
 public class PacketUtils {
 	
@@ -42,13 +46,31 @@ public class PacketUtils {
 		}
 	}
 	
-	
+	protected static String color(String text) {
+	    return ChatColor.translateAlternateColorCodes('&', text);
+	}
 	
 	//Titles
 	public static void sendTitle(Player player, String title, TitleType type, int fadeIn, int stay, int fadeOut){
-		//PacketPlayOutTitle titleP = new PacketPlayOutTitle(EnumTitleAction.TITLE, ChatSerializer.a("{\"text\":\"Test\"}"));
+		switch(type) {
+            case ACTIONBAR:
+                player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(color(title)));
+                break;
+            case SUBTITLE:
+                player.sendTitle("§7", color(title), fadeIn, stay, fadeOut);
+                break;
+            case TITLE:
+                player.sendTitle(color(title), "§7", fadeIn, stay, fadeOut);
+                break;
+            default:
+                break;
+		    
+		}
+	    
+	    
+	    //PacketPlayOutTitle titleP = new PacketPlayOutTitle(EnumTitleAction.TITLE, ChatSerializer.a("{\"text\":\"Test\"}"));
 		//((CraftPlayer) player).getHandle().playerConnection.sendPacket(titleP);
-		title = title.replaceAll("\n", "");
+		/*title = title.replaceAll("\n", "");
 		try{
 			Constructor<?> titleConst = getServerClass("PacketPlayOutTitle")
 					.getConstructor(getServerClass("PacketPlayOutTitle$EnumTitleAction"), 
@@ -65,7 +87,7 @@ public class PacketUtils {
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-				
+		*/	
 	}
 	
 	public static void sendWorldBorder(Player player, Location center, int size){

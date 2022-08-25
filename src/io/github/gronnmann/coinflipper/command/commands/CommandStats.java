@@ -12,8 +12,8 @@ import io.github.gronnmann.utils.coinflipper.GeneralUtils;
 
 public class CommandStats extends CommandModule{
 
-	public CommandStats(String label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+	public CommandStats() {
+		super(Message.CMD_STATS.getMessage(), "stats", 0, -1, false);
 	}
 
 	@Override

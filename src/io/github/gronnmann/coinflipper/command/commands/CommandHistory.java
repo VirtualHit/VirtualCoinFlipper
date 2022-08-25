@@ -10,8 +10,8 @@ import io.github.gronnmann.coinflipper.history.HistoryManager;
 
 public class CommandHistory extends CommandModule{
 
-	public CommandHistory(String label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+	public CommandHistory() {
+		super(Message.CMD_HISTORY.getMessage(), "history", 0, -1, true);
 	}
 
 	@Override

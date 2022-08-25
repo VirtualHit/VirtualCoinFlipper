@@ -1,7 +1,6 @@
 package io.github.gronnmann.coinflipper.command.commands;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 import io.github.gronnmann.coinflipper.bets.BettingManager;
 import io.github.gronnmann.coinflipper.command.CommandModule;
@@ -9,8 +8,8 @@ import io.github.gronnmann.coinflipper.customizable.Message;
 
 public class CommandClear extends CommandModule{
 
-	public CommandClear(String label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+	public CommandClear() {
+		super(Message.CMD_CLEAR.getMessage(), "clear", 0, -1, false);
 	}
 
 	@Override

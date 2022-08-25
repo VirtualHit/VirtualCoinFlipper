@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import com.github.sirblobman.combatlogx.api.ICombatLogX;
-import com.github.sirblobman.combatlogx.api.ICombatManager;
+import com.github.sirblobman.combatlogx.api.manager.ICombatManager;
 
 public final class HookCombatLogX11 {
 	private HookCombatLogX11() {}

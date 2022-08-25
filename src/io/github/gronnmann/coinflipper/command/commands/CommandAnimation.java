@@ -5,11 +5,12 @@ import org.bukkit.entity.Player;
 
 import io.github.gronnmann.coinflipper.animations.AnimationGUI;
 import io.github.gronnmann.coinflipper.command.CommandModule;
+import io.github.gronnmann.coinflipper.customizable.Message;
 
 public class CommandAnimation extends CommandModule{
 
-	public CommandAnimation(String[] label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+	public CommandAnimation() {
+		super(new String[] {Message.CMD_ANIMATION.getMessage(), "animation", "anim"}, "animation", 0, -1, true);
 	}
 
 	@Override

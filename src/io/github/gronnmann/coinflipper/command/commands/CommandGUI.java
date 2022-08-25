@@ -8,11 +8,9 @@ import io.github.gronnmann.coinflipper.customizable.Message;
 import io.github.gronnmann.coinflipper.gui.SelectionScreen;
 
 public class CommandGUI extends CommandModule{
-	
 
-
-	public CommandGUI(String[] label, String permission, int minArgs, int maxArgs, boolean playerOnly) {
-		super(label, permission, minArgs, maxArgs, playerOnly);
+    public CommandGUI() {
+		super(new String[] {Message.CMD_GUI.getMessage()}, "gui", 0, -1, true);
 	}
 
 	@Override

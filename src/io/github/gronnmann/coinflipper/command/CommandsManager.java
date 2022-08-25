@@ -39,24 +39,19 @@ public class CommandsManager implements CommandExecutor{
 		
 		//add all commands
 		
-		modules.add(new CommandHelp("help", "help", 0, -1, false, help));
-		guiCmd = new CommandGUI(new String[] {Message.CMD_GUI.getMessage()}, "gui", 0, -1, true);
+		modules.add(new CommandHelp());
+		guiCmd = new CommandGUI();
 		modules.add(guiCmd);
-		modules.add(new CommandClear(Message.CMD_CLEAR.getMessage(), "clear", 0, -1, false));
-		modules.add(new CommandStats(Message.CMD_STATS.getMessage(), "stats", 0, -1, false));
-		modules.add(new CommandHistory(Message.CMD_HISTORY.getMessage(), "history", 0, -1, true));
-		modules.add(new CommandAnimation(new String[] {Message.CMD_ANIMATION.getMessage(), "animation", "anim"}, "animation", 0, -1, true));
-		modules.add(new CommandReload(Message.CMD_RELOAD.getMessage(), "reload", 0, -1, false));
-		modules.add(new CommandConfigEditor(Message.CMD_CONFIG.getMessage(), "config", 0, -1, true));
+		modules.add(new CommandClear());
+		modules.add(new CommandStats());
+		modules.add(new CommandHistory());
+		modules.add(new CommandAnimation());
+		modules.add(new CommandReload());
+		modules.add(new CommandConfigEditor());
 		
-		
-		creationModule = new CommandCreateGame("create", "create", 2, 2, true);
+		creationModule = new CommandCreateGame();
 	}
-	
-	
-	
-	
-	//send command to right command-module
+
 	public boolean onCommand(CommandSender sender, Command cmd, String cfL, String[] args) {
 		
 		int argsNum = args.length;
@@ -72,9 +67,7 @@ public class CommandsManager implements CommandExecutor{
 				sender.sendMessage(help);
 				return true;
 			}
-		}
-		
-		if (argsNum > 0) {
+		} else if (argsNum > 0) {
 			for (CommandModule m : modules) {
 				
 				//Debug.print(m.getLabels().toString() + ":" + m.getMinArgs() + ":" + m.getMaxArgs() + ":" + args[0].toLowerCase());
@@ -102,7 +95,7 @@ public class CommandsManager implements CommandExecutor{
 			}
 			
 			try {
-				Double checkIfGameCreation = Double.parseDouble(args[0]);
+				Double.parseDouble(args[0]);
 				
 				if (manageCommand(creationModule, sender, argsNum, senderPlayer)) {
 					creationModule.runCommand(sender, args);
